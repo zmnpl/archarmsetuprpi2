@@ -1,6 +1,6 @@
 # Arch ARM Setup
 
-This is my variation of an Arch Linux Arm installation on a Raspberry PI 2. Mostly for my reference but should help others as well. I'm using the RPI for automation tasks like backups and as a server i.e. for Postgres for development.
+This is my variation of an Arch Linux Arm installation on a Raspberry PI 2. Mostly for my reference but should help others as well. I'm using the RPI for automation tasks like backups and as a server i.e. for Postgres for development and testing.
 
 ## Make SD card
 
@@ -11,7 +11,8 @@ Making the SD card is as simple as following the instructions on the download pa
 ## Load German keyboard
     loadkeys de-latin1-nodeadkeys
 
-## su
+## Switch to root
+   su
 
 ## Add user
     useradd -m -g users -s /bin/bash simon
@@ -20,9 +21,9 @@ Making the SD card is as simple as following the instructions on the download pa
 ## Sudo
     pacman -S sudo
     EDITOR=nano visudo
-Uncommment this line
+Uncommment this line  
     %wheel ALL=(ALL) ALL
-Add user to group wheel
+Add user to group wheel  
     gpasswd -a simon wheel
 
 ## Switch root password
@@ -45,11 +46,13 @@ ln -s /usr/share/zoneinfo/Europe/Berlin /etc/localtime
 
 ### /etc/locale.gen
 Uncomment
+
     #de_DE.UTF-8 UTF-8
     #de_DE ISO-8859-1
     #de_DE@euro ISO-8859-15
 
-### locale-gen
+### Generate locale
+    locale-gen
 
 ## Enable SSH
     systemctl enable sshd.service
@@ -59,7 +62,8 @@ Uncomment
 
 ## Pacman - switch color on
     vim /etc/pacman.conf
-Uncomment
+
+Uncomment  
     #Color
 
 ## Vim
@@ -88,3 +92,6 @@ Uncomment
     /usr/bin/zsh
 
 ## Clone and install dotfiles
+
+## Install further packages
+    pacman -S screenfetch rsync getmail
