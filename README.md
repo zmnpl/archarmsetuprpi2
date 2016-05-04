@@ -21,9 +21,11 @@ Making the SD card is as simple as following the instructions on the download pa
 ## Sudo
     pacman -S sudo
     EDITOR=nano visudo
-Uncommment this line  
-    %wheel ALL=(ALL) ALL
-Add user to group wheel  
+
+Uncommment this line
+    #%wheel ALL=(ALL) ALL
+
+Add user to group wheel
     gpasswd -a simon wheel
 
 ## Switch root password
@@ -60,11 +62,15 @@ Uncomment
 
 ## ToDo - SSH Key for login without pw
 
-## Pacman - switch color on
-    vim /etc/pacman.conf
+## Pacman
 
-Uncomment  
+### switch color on
+    vim /etc/pacman.conf
+    #Uncomment next line
     #Color
+
+### update
+    pacman -Syu
 
 ## Vim
     pacman -S vim
@@ -95,3 +101,10 @@ Uncomment
 
 ## Install further packages
     pacman -S screenfetch rsync getmail
+
+## Enable USB to power external HDD
+
+Add line to bottom of */boot/config.txt*
+    max_usb_current=1
+
+## ToDo wiring pi and a project on this
