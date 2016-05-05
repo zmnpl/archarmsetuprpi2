@@ -14,6 +14,9 @@ Making the SD card is as simple as following the instructions on the download pa
 ## Switch to root
     su
 
+## Vim
+    pacman -S vim
+
 ## Add user
     useradd -m -g users -s /bin/bash simon
     passwd simon
@@ -39,18 +42,18 @@ Making the SD card is as simple as following the instructions on the download pa
 
 ## Local settings
 
-### /etc/locale.conf
-    vim /etc/locale.conf
+### Edit /etc/locale.conf
+    # Uncomment
     echo LANG=de_DE.UTF-8
     LC_COLLATE=C
     LANGUAGE=de_DE
 
-### /etc/localtime
-ln -s /usr/share/zoneinfo/Europe/Berlin /etc/localtime
+### Edit /etc/localtime
+    ln -s /usr/share/zoneinfo/Europe/Berlin /etc/localtime
 
-### /etc/locale.gen
-Uncomment
+### Edit /etc/locale.gen
 
+    #Uncomment
     #de_DE.UTF-8 UTF-8
     #de_DE ISO-8859-1
     #de_DE@euro ISO-8859-15
@@ -73,9 +76,6 @@ Uncomment
 
 ### update
     pacman -Syu
-
-## Vim
-    pacman -S vim
 
 ## Git
     pacman -S git
