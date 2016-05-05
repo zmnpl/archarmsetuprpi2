@@ -1,6 +1,6 @@
 # Arch ARM Setup
 
-This is my variation of an Arch Linux Arm installation on a Raspberry PI 2. Mostly for my reference but should help others as well. I'm using the RPI for automation tasks like backups and as a server i.e. for Postgres for development and testing.
+This is my variation of an Arch Linux Arm installation on a Raspberry PI 2. Mostly for my reference but should help others as well. I'm using the RPI for automation tasks like backups and as a server i.e. for Postgres for development and testing. Lacalization is for germany.
 
 ## Make SD card
 
@@ -15,6 +15,8 @@ Making the SD card is as simple as following the instructions on the download pa
     su
 
 ## Vim
+Based on preference.
+
     pacman -S vim
 
 ## Add user
@@ -26,6 +28,8 @@ Making the SD card is as simple as following the instructions on the download pa
     EDITOR=nano visudo
     # Uncommment this line
     #%wheel ALL=(ALL) ALL
+
+Who doesnt want to be insulted from time to time?
 
     # Insult me ... add line
     Defaults insults
@@ -77,6 +81,8 @@ Making the SD card is as simple as following the instructions on the download pa
     pacman -Syu
 
 ## Git
+Obligatory.
+
     pacman -S git
 
 ## Autofs
@@ -85,6 +91,8 @@ Making the SD card is as simple as following the instructions on the download pa
     systemctl enable autofs.service
 
 ## Cron
+Automation anyone?
+
     pacman -S cronie
     systemctl enable cronie
 
@@ -102,7 +110,16 @@ Making the SD card is as simple as following the instructions on the download pa
 
 ## Clone and install dotfiles
 
+## PostgreSQL
+Install postgresql and set password for new user
+
+    pacman -S postgresql
+    passwd postgres
+
+
 ## Install further packages
+Whatever is needed
+
     pacman -S screenfetch rsync getmail
 
 ## Enable USB to power external HDD
