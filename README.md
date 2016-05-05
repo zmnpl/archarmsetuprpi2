@@ -21,16 +21,13 @@ Making the SD card is as simple as following the instructions on the download pa
 ## Sudo
     pacman -S sudo
     EDITOR=nano visudo
-
-### Insult me
-    vim /etc/sudoers
-    #add line
-    Defaults insults
-
-Uncommment this line
+    # Uncommment this line
     #%wheel ALL=(ALL) ALL
 
-Add user to group wheel
+    # Insult me ... add line
+    Defaults insults
+
+### Add user to group wheel
     gpasswd -a simon wheel
 
 ## Switch root password
