@@ -12,7 +12,7 @@ Making the SD card is as simple as following the instructions on the download pa
     loadkeys de-latin1-nodeadkeys
 
 ## Switch to root
-   su
+    su
 
 ## Add user
     useradd -m -g users -s /bin/bash simon
@@ -21,6 +21,11 @@ Making the SD card is as simple as following the instructions on the download pa
 ## Sudo
     pacman -S sudo
     EDITOR=nano visudo
+
+### Insult me
+    vim /etc/sudoers
+    #add line
+    Defaults insults
 
 Uncommment this line
     #%wheel ALL=(ALL) ALL
@@ -80,6 +85,8 @@ Uncomment
 
 ## Autofs
     pacman -S autofs
+    #configure
+    systemctl enable autofs.service
 
 ## Cron
     pacman -S cronie
@@ -108,3 +115,9 @@ Add line to bottom of */boot/config.txt*
     max_usb_current=1
 
 ## ToDo wiring pi and a project on this
+
+## Restore Configurations
+* /etc/crypttab
+* /etc/fstab
+* crontab
+* scripts
