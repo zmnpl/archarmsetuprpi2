@@ -69,9 +69,8 @@ Making the SD card is as simple as following the instructions on the download pa
 
 ## Pacman
 
-### switch color on
-    vim /etc/pacman.conf
-    #Uncomment next line
+### Colorize - edit /etc/pacman.conf
+    #Uncomment
     #Color
 
 ### update
@@ -94,7 +93,7 @@ Making the SD card is as simple as following the instructions on the download pa
     systemctl enable ntpd.service
     systemctl start ntpd.service
     ntpd -gq
-    hwclocl -w
+    hwclock -w
 
 ## Zsh
     pacman -S zsh
@@ -107,8 +106,8 @@ Making the SD card is as simple as following the instructions on the download pa
     pacman -S screenfetch rsync getmail
 
 ## Enable USB to power external HDD
+Edit */boot/config.txt*
 
-Add line to bottom of */boot/config.txt*
     max_usb_current=1
 
 ## ToDo wiring pi and a project on this
