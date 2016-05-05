@@ -54,9 +54,9 @@ Making the SD card is as simple as following the instructions on the download pa
 ### Edit /etc/locale.gen
 
     #Uncomment
-    #de_DE.UTF-8 UTF-8
-    #de_DE ISO-8859-1
-    #de_DE@euro ISO-8859-15
+    de_DE.UTF-8 UTF-8
+    de_DE ISO-8859-1
+    de_DE@euro ISO-8859-15
 
 ### Generate locale
     locale-gen
